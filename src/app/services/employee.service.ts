@@ -34,4 +34,9 @@ export class EmployeeService {
   deleteEmployee(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
+
+  // search an employee
+  searchEmployees(name: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/search/${name}`);
+  }
 }

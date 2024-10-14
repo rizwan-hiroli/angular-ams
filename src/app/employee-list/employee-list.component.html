@@ -6,7 +6,7 @@
       <div class="card-body">
         <section class="m-2">
             <label>Employee name to search:</label>
-            <input type="text"  value="">
+            <input type="text" value="" #employeeName (keyup)="searchEmployees(employeeName.value)">
         </section>
         <div class="row">
             <div class="col-sm-6 border border-4" *ngFor="let employee of employees">

@@ -14,6 +14,8 @@ import { CommonModule } from '@angular/common'; // Import CommonModule
 export class EmployeeListComponent implements OnInit {
   employees: any[] = [];
 
+  employeeName: string = '';  // Bind this to the input field
+
   constructor(private employeeService: EmployeeService, public router: Router) {}
 
   ngOnInit(): void {
@@ -24,6 +26,14 @@ export class EmployeeListComponent implements OnInit {
     this.employeeService.getEmployees().subscribe(data => {
       this.employees = data;
     });
+  }
+
+  searchEmployees(name: string): void {
+    if(name !=''){
+      this.employeeService.searchEmployees(name).subscribe(data => {
+        this.employees = data;
+      });
+    }
   }
 
   deleteEmployee(id: string): void {
