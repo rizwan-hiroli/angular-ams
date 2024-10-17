@@ -3,11 +3,12 @@ import { EmployeeService } from '../services/employee.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common'; // Import CommonModule
+import { EmployeeCardComponent } from '../partials/employee-card.component'; // Import your navbar component
 
 @Component({
   selector: 'app-employee-list',
   standalone: true,
-  imports: [ReactiveFormsModule,CommonModule],
+  imports: [ReactiveFormsModule,CommonModule,EmployeeCardComponent],
   templateUrl: './employee-list.component.html',
   styleUrls: ['./employee-list.component.css']
 })
